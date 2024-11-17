@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start:api": "nx run apps-api:serve"
+    "start:api": "nx run apps-api:serve",
+    "test:api": "nx run-many --target=test --projects=api-auths,api-products,api-users,apps-api",
+    "start:web": "nx run apps-web:serve",
+    "test:web": "nx run apps-web:test"
   },
   "private": true,
   "dependencies": {
