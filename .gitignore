@@ -5,8 +5,8 @@ dist
 tmp
 /out-tsc
 .nx
-.yarn
-/docker
+/.yarn/releases
+/docker/data
 
 # dependencies
 node_modules
