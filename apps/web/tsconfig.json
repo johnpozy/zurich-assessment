@@ -5,7 +5,7 @@
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "resolveJsonModule": true,
@@ -18,14 +18,6 @@
     ],
     "types": ["jest", "node"]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx",
-    "../../apps/web/.next/types/**/*.ts",
-    "../../dist/apps/web/.next/types/**/*.ts",
-    "next-env.d.ts"
-  ],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts"],
   "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }

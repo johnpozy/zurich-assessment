@@ -18,7 +18,10 @@
       "api/auths": ["libs/api/auths/src/index.ts"],
       "api/products": ["libs/api/products/src/index.ts"],
       "api/users": ["libs/api/users/src/index.ts"],
-      "api/utils": ["libs/api/utils/src/index.ts"]
+      "api/utils": ["libs/api/utils/src/index.ts"],
+      "web/auths": ["libs/web/auths/src/index.ts"],
+      "web/users": ["libs/web/users/src/index.ts"],
+      "web/utils": ["libs/web/utils/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

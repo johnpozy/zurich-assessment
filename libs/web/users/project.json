@@ -1,0 +1,9 @@
+{
+  "name": "web-users",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/users/src",
+  "projectType": "library",
+  "tags": ["web", "users"],
+  "// targets": "to see all targets run: nx show project web-users --web",
+  "targets": {}
+}
