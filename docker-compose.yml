@@ -9,25 +9,6 @@ volumes:
 
 services:
 
-### API #################################################
-  api:
-    restart: always
-    build:
-      context: ./apps/api
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./apps/api:/app
-      - /app/node_modules
-    environment:
-      - DATABASE_URL=postgresql://user:password@postgres:5432/MOTOR_INSURANCE_WEBSITE
-      - NODE_ENV=development
-    depends_on:
-      - postgres
-    networks:
-      - frontend
-      - backend
-
 ### PostgreSQL ###########################################
     postgres:
       restart: always
