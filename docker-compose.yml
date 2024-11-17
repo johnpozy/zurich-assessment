@@ -1,0 +1,48 @@
+networks:
+  frontend:
+    driver: ${NETWORKS_DRIVER}
+  backend:
+    driver: ${NETWORKS_DRIVER}
+volumes:
+  postgres:
+    driver: ${VOLUMES_DRIVER}
+
+services:
+
+### PostgreSQL ###########################################
+    postgres:
+      restart: always
+      build:
+        context: ./docker/postgres
+        args:
+          - POSTGRES_VERSION=alpine
+      volumes:
+        - ./docker/data/postgres:/var/lib/postgresql/data
+        - ./docker/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      ports:
+        - "5432:5432"
+      environment:
+        - POSTGRES_DB=MOTOR_INSURANCE_WEBSITE
+        - POSTGRES_USER=user
+        - POSTGRES_PASSWORD=password
+      networks:
+        - backend
+
+### pgAdmin ##############################################
+    pgadmin:
+      restart: always
+      build:
+        context: ./docker/pgadmin
+      environment:
+        - "PGADMIN_DEFAULT_EMAIL=admin@pgadmin.com"
+        - "PGADMIN_DEFAULT_PASSWORD=password"
+      ports:
+        - "8080:80"
+      volumes:
+        - ./docker/data/pgadmin:/var/lib/pgadmin
+      user: "5050:5050"
+      depends_on:
+        - postgres
+      networks:
+        - frontend
+        - backend
