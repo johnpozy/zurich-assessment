@@ -65,6 +65,7 @@ The API is built with NestJS and it's using PostgreSQL as the database. Running 
 
 ### Local Development
 Once the API is running, the Swagger API documentation will be available at `http://localhost:5000/api/docs`
+![alt text](docs/image.png)
 
 Start the API development server:
 ```bash
@@ -100,3 +101,6 @@ yarn start:web
 ```
 
 The web application will be available at `http://localhost:3000`
+![alt text](docs/image-1.png)
+![alt text](docs/image-2.png)
+![alt text](docs/image-3.png)
